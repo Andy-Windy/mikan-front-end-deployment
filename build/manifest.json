@@ -1,0 +1,26 @@
+{
+  "short_name": "mikan-peel",
+  "name": "Mikan Peel",
+  "version": "0.2.1",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon_full.ico",
+      "type": "image/x-icon",
+      "sizes": "161x161"
+    },
+    {
+      "src": "mikan512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://mikan.mom",
+  "display": "standalone",
+  "theme_color": "#f39c38",
+  "background_color": "#ffffff"
+}
