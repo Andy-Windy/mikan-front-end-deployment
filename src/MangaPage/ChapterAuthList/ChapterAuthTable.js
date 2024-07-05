@@ -17,7 +17,7 @@ export default function ChapterAuthTable(props) {
             {title: "完成话数", field: "count"},
             {title: "最近活跃", field: "lastComplete",render: rowData => localtime(rowData.lastComplete), }
         ]} options={{
-            pageSize: 5 ,
+            pageSize: 7 ,
             paging: false,
         }} data={auths} components={{
             Pagination: () => null,
