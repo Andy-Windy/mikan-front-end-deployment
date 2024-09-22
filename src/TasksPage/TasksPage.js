@@ -34,7 +34,11 @@ export default function TasksPage() {
         })
             .then(res => res.data)
             .then(res => {
-                    setTasks(res["tasks"]);
+                const processedTasks = res["tasks"].map(task => ({
+                    ...task,
+                    mname: `${task.mname}-${task.type}`
+                }));
+                setTasks(processedTasks);
                 }
             ).catch(err => {
             dispatch(setSnackbar("拉取任务列表失败", "error"));

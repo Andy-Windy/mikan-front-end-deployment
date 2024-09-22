@@ -20,6 +20,11 @@ import DialogActions from "@material-ui/core/DialogActions";
 import Dialog from "@material-ui/core/Dialog";
 import UserAutocomplete from "../../../Component/UserAutocomplete/UserAutocomplete";
 import StatusIcon from "../../../Component/StatusIcon/StatusIcon";
+import Chip from "@material-ui/core/Chip";
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from "@material-ui/core/Radio"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,6 +40,19 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(1),
     }
 }));
+
+const statusToColor = (status) => {
+    switch (status % 4) {
+        case 1:
+            return { color: 'lightBlue', label: '三成熟' }
+        case 2:
+            return { color: '#FFFF00', label: '五成熟' }
+        case 3:
+            return { color: '#FF5252', label: '七成熟' }
+        default:
+            return { color: '#2eff3c', label: '新鲜' }
+    }
+};
 
 export default function TaskBlock(props) {
     const classes = useStyles();
@@ -87,6 +105,14 @@ export default function TaskBlock(props) {
                     <ToggleStatusButtons taskState={taskState} setTaskState={setTaskState} {...props}/>}</Box>
 
                 </Box>
+                {taskState && taskState["wait_status"] !== null && taskState["status"] === 0 && <>
+                    <Divider/>
+                    <Box display="flex" className={classes.listItem}>
+                        <Box flexGrow={1}><Typography variant="h6">鸽度</Typography></Box>
+                        {console.log(taskState)}
+                        <WaitStatusChip taskState={taskState} setTaskState={setTaskState} {...props}></WaitStatusChip>
+                    </Box>
+                </>}
                 {taskState && taskState["accept_by"]["uid"] !== "" && <>
                     <Divider/>
                     <Box display="flex" className={classes.listItem}>
@@ -214,5 +240,78 @@ function ToggleStatusButtons(props) {
         <Button variant="contained" color="primary" size="small" onClick={handleStatusClick(0)} className={classes.button}><StatusIcon status={0}/>再开</Button>}
             {taskState && taskState["status"] === 2 &&
             <Button variant="contained" color="primary" size="small" onClick={handleStatusClick(0)} className={classes.button}><StatusIcon status={0}/>开始</Button>}</>}
+    </>;
+}
+
+
+function WaitStatusChip(props) {
+    const {taskState, adminAuth, setTaskState} = props;
+    const [selectedValue, setSelectedValue] = useState(taskState["wait_status"]); // 初始化状态
+
+    const dispatch = useDispatch();
+
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const onSubmit = () => {
+        handleAssign(selectedValue)();
+        handleClose();
+    };
+
+    const handleRadioChange = (event) => {
+        setSelectedValue(event.target.value); // 更新状态
+    };
+
+    const handleAssign = (selectedValue) => () => {
+        dispatch(setBusy(true));
+        axios.get(API_MANGA + "/" + taskState["mid"] + "/chapter/" + taskState["cid"] + "/task/" + taskState["id"] + "/waitStatusChange", {
+            params: {selected_value: selectedValue},
+            headers: tokenHeader(),
+            validateStatus: status => status === 200
+        }).then(res => res.data).then(res => {
+            setTaskState(res);
+        }).catch(err => {
+            try {
+                console.log(err.response.data.detail);
+                dispatch(setSnackbar(err.response.data.detail, "error"));
+            } catch (e) {
+                dispatch(setSnackbar("未知的错误", "error"));
+            }
+        }).finally(() => dispatch(setBusy(false)));
+    };
+
+    return <>
+        {adminAuth && <Chip style={{ backgroundColor: statusToColor(taskState["wait_status"]).color }} onClick={handleClickOpen} label={statusToColor(taskState["wait_status"]).label}/>}
+        {(!adminAuth) && <Chip style={{ backgroundColor: statusToColor(taskState["wait_status"]).color }} label={statusToColor(taskState["wait_status"]).label}/>}
+
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth>
+            <DialogTitle id="form-dialog-title">修改</DialogTitle>
+            <DialogContent>
+                <FormControl component="fieldset">
+                    <RadioGroup aria-label="gender" name="gender1" value={String(selectedValue)} onChange={handleRadioChange} row>
+                        <FormControlLabel value="4" control={<Radio />} label="新鲜" />
+                        <FormControlLabel value="5" control={<Radio />} label="三成熟" />
+                        <FormControlLabel value="6" control={<Radio />} label="五成熟" />
+                        <FormControlLabel value="7" control={<Radio />} label="七成熟" />
+                        <FormControlLabel value="0" control={<Radio />} label="自动设置" />
+                    </RadioGroup>
+                </FormControl>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    取消
+                </Button>
+                <Button onClick={onSubmit} color="primary">
+                    保存
+                </Button>
+            </DialogActions>
+        </Dialog>
     </>;
 }

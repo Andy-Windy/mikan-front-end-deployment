@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3c5e63ac-f909-4b5f-8156-ff96e372a41b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterAuthList/ChapterAuthList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterAuthList/ChapterAuthList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterAuthList/ChapterAuthTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterAuthList/ChapterAuthTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +42,9 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="1aLNT2Lzsur87QA4oneYfvfzT6Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
