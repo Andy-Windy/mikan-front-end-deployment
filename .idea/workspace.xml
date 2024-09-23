@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5e63ac-f909-4b5f-8156-ff96e372a41b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" afterDir="false" />
@@ -51,13 +50,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "D:/Host/Front/mikan-peel/src",
-    "two.files.diff.last.used.folder": "D:/Host/Front/mikan-peel/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Host/Front/mikan-peel/src&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;D:/Host/Front/mikan-peel/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/src/Border/Border.js" />

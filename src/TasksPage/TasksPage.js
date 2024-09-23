@@ -36,7 +36,7 @@ export default function TasksPage() {
             .then(res => {
                 const processedTasks = res["tasks"].map(task => ({
                     ...task,
-                    mname: `${task.mname}-${task.type}`
+                    mname: `${task.mname}鸪鸪鸪${task.type}`
                 }));
                 setTasks(processedTasks);
                 }

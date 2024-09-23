@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "lightBlue",
     },
     lightYellowBadge: {
-        backgroundColor: '#FFFF00',
+        backgroundColor: 'rgba(255, 255, 0, 0.5)',
     },
     lightRedBadge: {
-        backgroundColor: "#FF5252",
+        backgroundColor: "rgba(255, 82, 82, 0.5)",
     },
 }));
 
@@ -64,7 +64,7 @@ export default function TasksTable(props) {
         <MaterialTable icons={tableIcons} columns={[
             {title: "漫画", field: "mname", defaultGroupOrder: 1,
                 render: (task) => { // 自定义渲染函数
-                const [mname, type] = task.split('-');
+                const [mname, type] = task.split('鸪鸪鸪');
                 return(
                 <Badge badgeContent={getBadgeContent(tasks,task,type)} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} overlap="rectangle" classes={{ badge: getBadgeClass(getBadgeStatus(tasks,task,type)) }}>
                     <span style={{ paddingRight: '10px' }}>{mname}</span>
@@ -95,8 +95,8 @@ export default function TasksTable(props) {
                 const colorMapping = {
                     0: 'transparent',
                     1: 'lightBlue', // 第一种颜色
-                    2: '#FFFF00', // 第二种颜色
-                    3: '#FF5252', // 第三种颜色
+                    2: 'rgba(255, 255, 0, 0.5)', // 第二种颜色
+                    3: 'rgba(255, 82, 82, 0.5)', // 第三种颜色
                 };
                 const backgroundColor = colorMapping[rowData.wait_status % 4] || 'transparent';
 

@@ -46,11 +46,11 @@ const statusToColor = (status) => {
         case 1:
             return { color: 'lightBlue', label: '三成熟' }
         case 2:
-            return { color: '#FFFF00', label: '五成熟' }
+            return { color: 'rgba(255, 255, 0, 0.5)', label: '五成熟' }
         case 3:
-            return { color: '#FF5252', label: '七成熟' }
+            return { color: 'rgba(255, 82, 82, 0.5)', label: '七成熟' }
         default:
-            return { color: '#2eff3c', label: '新鲜' }
+            return { color: 'rgba(46, 255, 60, 0.7)', label: '新鲜' }
     }
 };
 
