@@ -15,6 +15,7 @@ import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import {useSelector} from "react-redux";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Deck } from "@material-ui/icons";
 
 export const desktopWidth = 80;
 const mobileWidth = 150;
@@ -57,6 +58,9 @@ export default function Sidebar(props) {
                         </SidebarItem>
                         <SidebarItem to={"/tasks"} name={"任务"} sidebarToggle={sidebarToggle}>
                             <DateRangeIcon style={isDesktop ? {fontSize: 62} : {}}/>
+                        </SidebarItem>
+                        <SidebarItem to={"/runningTasks"} name={"进行中的任务"} sidebarToggle={sidebarToggle}>
+                            <Deck style={isDesktop ? {fontSize: 62} : {}}/>
                         </SidebarItem>
                         <SidebarItem to={"/cloud"} name={"文件"} sidebarToggle={sidebarToggle}>
                             <FolderSharedIcon style={isDesktop ? {fontSize: 62} : {}}/>

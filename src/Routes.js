@@ -20,6 +20,7 @@ import MessagePage from "./MessagePage/MessagePage";
 import UserPage from "./UserPage/UserPage";
 import NotFound from "./NotFound";
 import SignUpPage from "./LoginPage/SignUpPage";
+import RunningTasksPage from './RunningTasksPage/RunningTasksPage';
 
 export default function Routes() {
 
@@ -32,6 +33,9 @@ export default function Routes() {
                     </Route>
                     <Route path={"/tasks"}>
                         <TasksPage/>
+                    </Route>
+                    <Route path={"/runningTasks"}>
+                        <RunningTasksPage/>
                     </Route>
                     <Route path={"/login"}>
                         <LoginPage/>

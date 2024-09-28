@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c5e63ac-f909-4b5f-8156-ff96e372a41b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Component/UserChip/ForTableUserChip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RunningTasksPage/RunningTasksPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RunningTasksPage/RunningTasksTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TasksPage/TasksTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Border/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Border/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PeoplePage/PeoplePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeoplePage/PeoplePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
