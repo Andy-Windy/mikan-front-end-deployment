@@ -21,7 +21,7 @@ import {useDispatch} from "react-redux";
 export default function NewChapterButton(props) {
     const {mid} = props;
     const [open, setOpen] = React.useState(false);
-    const [route, setRoute] = React.useState({no1: false, no2: false, no4: false, empty: false});
+    const [route, setRoute] = React.useState({no1: true, no2: false, no4: true, no8: true, empty: false});
     const dispatch = useDispatch();
 
     const handleClickOpen = () => {
