@@ -13,6 +13,7 @@ import FolderSharedIcon from '@material-ui/icons/FolderShared';
 import PeopleIcon from '@material-ui/icons/People';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ExtensionIcon from '@material-ui/icons/Extension';
+import Storage from '@material-ui/icons/Storage';
 import {useSelector} from "react-redux";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Deck } from "@material-ui/icons";
@@ -55,6 +56,9 @@ export default function Sidebar(props) {
                     <List disablePadding={true}>
                         <SidebarItem to={"/"} name={"漫画"} sidebarToggle={sidebarToggle}>
                             <MenuBookIcon style={isDesktop ? {fontSize: 62} : {}}/>
+                        </SidebarItem>
+                        <SidebarItem to={"/magazinePage"} name={"杂志"} sidebarToggle={sidebarToggle}>
+                            <Storage style={isDesktop ? {fontSize: 62} : {}}/>
                         </SidebarItem>
                         <SidebarItem to={"/tasks"} name={"任务"} sidebarToggle={sidebarToggle}>
                             <DateRangeIcon style={isDesktop ? {fontSize: 62} : {}}/>

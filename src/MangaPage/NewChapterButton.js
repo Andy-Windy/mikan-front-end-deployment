@@ -43,8 +43,6 @@ export default function NewChapterButton(props) {
         type += route["no8"] ? 8 : 0;
         type += route["empty"] ? 16 : 0;
         values["ps"] = "";
-        console.log(type);
-        console.log(values);
         axios.put(API_MANGA + "/" + mid + "/chapter", values, {
             params: {type: type},
             headers: tokenHeader(),

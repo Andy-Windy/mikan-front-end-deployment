@@ -5,7 +5,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {setTitle} from "../controller/utils";
 import {setBusy, setSnackbar} from "../controller/site";
 import axios from "axios";
-import {API_RUNNING_TASK, API_TASK} from "../constant";
+import {API_RUNNING_TASK} from "../constant";
 import {useDispatch} from "react-redux";
 import {Box} from "@material-ui/core";
 import RunningTasksTable from "./RunningTasksTable";

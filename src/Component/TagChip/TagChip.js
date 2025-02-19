@@ -9,15 +9,22 @@ import {useDispatch} from "react-redux";
 
 
 export default function TagChip(props) {
-    const {tag, mid, cid, tid, deletable} = props;
+    const {tag, mid, cid, tid, deletable, lid} = props;
     const dispatch = useDispatch();
 
     const handleDelete = () => {
         let level = 2;
-        if (typeof tid !== "string") level = 1;
-        if (typeof cid !== "string") level = 0;
+        if (typeof lid !== "string")
+        {
+            if (typeof tid !== "string") level = 1;
+            if (typeof cid !== "string") level = 0;
+        }
+        else
+        {
+            level = 3;
+        }
         axios.post(API_TAG_DELETE, {name: tag.name, color: tag.color,
-            mid: mid, cid: level > 0 ? cid : "", tid: level > 1 ? tid : "", level: level}, {
+            mid: mid, cid: level > 0 ? cid : "", tid: level > 1 ? tid : "",lid: level <3 ? "" : lid, level: level}, {
             headers: tokenHeader(),
             validateStatus: status => status === 200
         }).then(res => window.location.reload()).catch(err => {

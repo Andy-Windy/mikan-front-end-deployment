@@ -20,7 +20,7 @@ import {useDispatch} from "react-redux";
 
 export default function AddTagChip(props) {
     const [open, setOpen] = React.useState(false);
-    const {level, mid, cid, tid} = props;
+    const {level, mid, cid, tid, lid} = props;
     const dispatch = useDispatch();
 
     const handleClickOpen = () => {
@@ -36,7 +36,7 @@ export default function AddTagChip(props) {
         values["mid"] = mid;
         values["cid"] = typeof cid === "string" ? cid : "";
         values["tid"] = typeof tid === "string" ? tid : "";
-        console.log(values);
+        values["lid"] = typeof lid === "string" ? lid : "";
         axios.put(API_TAG, values, {
             headers: tokenHeader(),
             validateStatus: status => status === 200

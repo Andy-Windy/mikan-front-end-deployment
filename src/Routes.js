@@ -21,6 +21,8 @@ import UserPage from "./UserPage/UserPage";
 import NotFound from "./NotFound";
 import SignUpPage from "./LoginPage/SignUpPage";
 import RunningTasksPage from './RunningTasksPage/RunningTasksPage';
+import MainMagazinePage from './MagazinePage/MainMagazinePage';
+import MagazinePage from './MagazinePage/MagazinePage';
 
 export default function Routes() {
 
@@ -30,6 +32,9 @@ export default function Routes() {
                 <Switch>
                     <Route exact path={"/"}>
                         <MainPage/>
+                    </Route>
+                    <Route exact path={"/magazinePage"}>
+                        <MainMagazinePage/>
                     </Route>
                     <Route path={"/tasks"}>
                         <TasksPage/>
@@ -59,6 +64,7 @@ export default function Routes() {
                         <MessagePage/>
                     </PrivateRoute>
                     <Route path={"/manga/:mid"} children={<MangaPage/>} />
+                    <Route path={"/magazine/:id"} children={<MagazinePage/>} />
                     <PrivateRoute path={"/user/:uid"} children={<UserPage/>} />
                     <Route path="*">
                         <NotFound/>

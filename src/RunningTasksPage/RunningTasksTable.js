@@ -6,7 +6,6 @@ import {localtime_exact} from "../controller/utils";
 import TagChip from "../Component/TagChip/TagChip";
 import { Badge } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles"
-import UserChip from "../Component/UserChip/UserChip";
 import ForTableUserChip from "../Component/UserChip/ForTableUserChip";
 
 //1个月lightBule

@@ -89,20 +89,12 @@ export default function MainPage(props) {
                 <Box display={"flex"} justifyContent="flex-end">
                     {privilege >= 2 && <NewMangaButton/>}
                     <FormControlLabel
-                        checked={showCherry}
-                        onChange={onChangeCherry}
-                        value={showCherry}
-                        size={"small"}
-                        control={<Switch color="primary"/>}
-                        label="显示夏蜜樱桃的作品"
-                        labelPlacement="start"/>
-                    <FormControlLabel
                         checked={showFinished}
                         onChange={onChangeFinish}
                         value={showCherry}
                         size={"small"}
                         control={<Switch color="primary"/>}
-                        label="显示不再更新的作品"
+                        label="显示汉化完成的作品"
                         labelPlacement="start"/>
                 </Box>
             </Collapse>

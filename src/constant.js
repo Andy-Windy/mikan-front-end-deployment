@@ -6,6 +6,7 @@ export const API_USER = API_BASE + "/user";
 export const API_TAG = API_BASE + "/tag";
 export const API_TAG_DELETE = API_BASE + "/tag_delete";
 export const API_MANGA = API_BASE + "/manga";
+export const API_MAGAZINE = API_BASE + "/magazine";
 export const API_TASK = API_BASE + "/task";
 export const API_RUNNING_TASK = API_BASE + "/running_task";
 
