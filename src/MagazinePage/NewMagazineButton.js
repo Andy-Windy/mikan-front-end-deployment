@@ -94,7 +94,7 @@ export default function NewMagazineButton() {
             <div>
                 <Button variant={"contained"} color={"primary"} onClick={handleClickOpen}>创建杂志</Button>
                 <Dialog open={open} onClose={handleClose} disableEnforceFocus >
-                    <Form onSubmit={onSubmit} render={({ handleSubmit }) => (
+                    <Form onSubmit={onSubmit} initialValues={{magazine_schedule_time: "00:00" }}render={({ handleSubmit }) => (
                         <form onSubmit={handleSubmit}>
                             <DialogTitle id="form-dialog-title">创建杂志</DialogTitle>
                             <DialogContent>
