@@ -109,7 +109,6 @@ export default function TaskBlock(props) {
                     <Divider/>
                     <Box display="flex" className={classes.listItem}>
                         <Box flexGrow={1}><Typography variant="h6">鸽度</Typography></Box>
-                        {console.log(taskState)}
                         <WaitStatusChip taskState={taskState} setTaskState={setTaskState} {...props}></WaitStatusChip>
                     </Box>
                 </>}
@@ -179,11 +178,30 @@ function ToggleButtons(props) {
         }).finally(() => dispatch(setBusy(false)));
     };
 
+    const handleAssignNormal = (assign_to) => () => {
+        if (assign_to === uid) dispatch(setGoo());
+        dispatch(setBusy(true));
+        axios.get(API_MANGA + "/" + taskState["mid"] + "/chapter/" + taskState["cid"] + "/task/" + taskState["id"] + "/charge_normal", {
+            params: {assign_to: assign_to},
+            headers: tokenHeader(),
+            validateStatus: status => status === 200
+        }).then(res => res.data).then(res => {
+            setTaskState(res);
+        }).catch(err => {
+            try {
+                console.log(err.response.data.detail);
+                dispatch(setSnackbar(err.response.data.detail, "error"));
+            } catch (e) {
+                dispatch(setSnackbar("未知的错误", "error"));
+            }
+        }).finally(() => dispatch(setBusy(false)));
+    };
+
     if (privilege === 0) return <Typography>无</Typography>;
 
     return <>
         {adminAuth && <Button variant="contained" color="primary" onClick={handleClickOpen} className={classes.button}>分配</Button>}
-        {taskState["status"] === 0 && <Button variant="contained" color="primary" onClick={handleAssign(uid)} className={classes.button}>承接</Button>}
+        {taskState["status"] === 0 && <Button variant="contained" color="primary" onClick={handleAssignNormal(uid)} className={classes.button}>承接</Button>}
 
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" fullWidth>
             <DialogTitle id="form-dialog-title">分配</DialogTitle>

@@ -2,16 +2,25 @@ import React from "react";
 import MaterialTable from "material-table";
 import {useHistory} from "react-router";
 import {tableIcons} from "../Component/MaterialTable/tableIcons";
+import {useSelector} from "react-redux";
 
 export default function UsersTable(props) {
     const history = useHistory();
+    const privilege = useSelector(state => state.user.privilege);
     const {users} = props;
 
+    const columns = [
+        {title: "昵称", field: "nickname"},
+        {title: "用户ID", field: "uid"},
+    ];
+    if (privilege>2) { columns.push({ title: "权限", field: "permissions" , lookup: {
+        0: "不活跃组员",
+        1: "普通组员",
+        2: "不设上限组员",
+    },}); }
+
     return (
-        <MaterialTable icons={tableIcons} columns={[
-            {title: "昵称", field: "nickname"},
-            {title: "用户ID", field: "uid"},
-        ]} options={{
+        <MaterialTable icons={tableIcons} columns={columns} options={{
             pageSize: 20
         }} data={users} components={{
             Toolbar: props => (<></>)

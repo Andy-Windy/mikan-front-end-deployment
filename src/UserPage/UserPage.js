@@ -19,6 +19,7 @@ import ChangePasswordButton from "../Component/ChangePasswordButton/ChangePasswo
 import {tableIcons} from "../Component/MaterialTable/tableIcons";
 import StatusIcon from "../Component/StatusIcon/StatusIcon";
 import MaterialTable from "material-table";
+import ChangePermissionsButton from "../Component/ChangePermissionsButton/ChangePermissionsButton";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +43,7 @@ export default function UserPage(props) {
     const dispatch = useDispatch();
     const history = useHistory();
     const privilege = useSelector(state => state.user.privilege);
+    const current_uid = useSelector(state => state.user.uid);
 
     const [user, setUser] = useState({});
     const [tasks, setTasks] = useState();
@@ -91,6 +93,7 @@ export default function UserPage(props) {
                                color="inherit">{user["nickname"]}</Link> || <Skeleton/>}
                     </Typography>
                 </Box>
+                <Box>{privilege >2 && <ChangePermissionsButton user={user}/>}</Box>
                 <Box>{privilege > 2 && <ChangePasswordButton uid={user["uid"]}/>}</Box>
             </Box>
             <Grid container spacing={2}>
@@ -114,9 +117,19 @@ export default function UserPage(props) {
                                 <Box>{user && localtime(user["goo_timestamp"])}</Box>
                             </Box>
                             <Box display="flex" flexDirection={"row"}>
-                                <Box flexGrow={1}><Typography>权限</Typography></Box>
+                                <Box flexGrow={1}><Typography>管理权限</Typography></Box>
                                 <Box>{user && user["privilege"]}</Box>
                             </Box>
+                            { (privilege>2 || uid === current_uid) &&
+                            <Box display="flex" flexDirection={"row"}>
+                                <Box flexGrow={1}><Typography>接取权限</Typography></Box>
+                                <Box>
+                                    {user["permissions"] === 0 && "不活跃组员"}
+                                    {user["permissions"] === 1 && "普通组员"}
+                                    {user["permissions"] === 2 && "不设上限组员"}
+                                </Box>
+                            </Box>
+                            }
                             <Box>
                                 <Typography paragraph>{user && user["introduction"]}</Typography>
                             </Box>

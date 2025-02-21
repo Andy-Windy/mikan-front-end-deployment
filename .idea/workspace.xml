@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5e63ac-f909-4b5f-8156-ff96e372a41b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagazinePage/NewMagazineButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagazinePage/NewMagazineButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Border/Border.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Border/Border.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Border/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Border/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MangaPage/ChapterBlock/TaskBlock/TaskInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PeoplePage/PeoplePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeoplePage/PeoplePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PeoplePage/UsersTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeoplePage/UsersTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserPage/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserPage/UserPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

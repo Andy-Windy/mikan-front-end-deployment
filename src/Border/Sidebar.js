@@ -4,9 +4,6 @@ import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import SidebarItem from "./SidebarItem";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import {Box} from "@material-ui/core";
-
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import FolderSharedIcon from '@material-ui/icons/FolderShared';
@@ -14,9 +11,12 @@ import PeopleIcon from '@material-ui/icons/People';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import Storage from '@material-ui/icons/Storage';
-import {useSelector} from "react-redux";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Deck } from "@material-ui/icons";
+
+import {makeStyles, useTheme} from "@material-ui/core/styles";
+import {Box} from "@material-ui/core";
+import {useSelector} from "react-redux";
+import {Deck} from "@material-ui/icons";
 
 export const desktopWidth = 80;
 const mobileWidth = 150;
@@ -52,7 +52,6 @@ export default function Sidebar(props) {
                 <Box>
                     <div className={classes.placeholder}/>
                     <Divider/>
-
                     <List disablePadding={true}>
                         <SidebarItem to={"/"} name={"漫画"} sidebarToggle={sidebarToggle}>
                             <MenuBookIcon style={isDesktop ? {fontSize: 62} : {}}/>
